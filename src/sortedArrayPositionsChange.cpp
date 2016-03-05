@@ -15,5 +15,41 @@ NOTES:
 
 void * sortedArrayPositionsChange(int *Arr, int len)
 {
-	return NULL;
+	int alt1, alt2, count = 0, i;
+	if (!Arr || len<2)
+	{
+		return NULL;
+	}
+	else{
+		for (i = 0; i<len - 1; i++)
+		{
+			if (count == 0 && Arr[i]>Arr[i + 1])
+			{
+				alt1 = i;
+				count++;
+				if (i == len - 2 && Arr[i + 1]<Arr[i])
+				{
+					alt2 = i + 1;
+					count++;
+				}
+
+			}
+			else if (count == 1 && Arr[i]>Arr[i + 1])
+			{
+				alt2 = i + 1;
+				printf("alt2 value is %d\n", alt2);
+				count++;
+			}
+		}
+		if (count == 2)
+		{
+			Arr[alt1] = Arr[alt1] ^ Arr[alt2];
+			Arr[alt2] = Arr[alt1] ^ Arr[alt2];
+			Arr[alt1] = Arr[alt1] ^ Arr[alt2];
+		}
+		else
+		{
+			return NULL;
+		}
+	}
 }
