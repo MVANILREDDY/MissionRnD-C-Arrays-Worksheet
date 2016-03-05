@@ -37,7 +37,6 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 			else if (count == 1 && Arr[i]>Arr[i + 1])
 			{
 				alt2 = i + 1;
-				printf("alt2 value is %d\n", alt2);
 				count++;
 			}
 		}
