@@ -43,7 +43,7 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 		if (count == 2)
 		{
 			Arr[alt1] = Arr[alt1] ^ Arr[alt2];
-			Arr[alt2] = Arr[alt1] ^ Arr[alt2];
+			Arr[alt2] = Arr[alt1] ^ Arr[alt2];//swapping using bitwise_xor.
 			Arr[alt1] = Arr[alt1] ^ Arr[alt2];
 		}
 		else
